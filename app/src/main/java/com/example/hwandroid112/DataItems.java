@@ -1,8 +1,5 @@
 package com.example.hwandroid112;
 
-import android.widget.Button;
-
-import java.util.List;
 
 public class DataItems {
 
@@ -49,5 +46,10 @@ public class DataItems {
 
     public void setChecked(boolean checked) {
         this.checked = checked;
+    }
+
+    @Override
+    public String toString() {
+        return title_view;
     }
 }

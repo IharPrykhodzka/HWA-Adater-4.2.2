@@ -47,20 +47,26 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                if (position == 0) {
-                    Intent intentNotes = new Intent(MainActivity.this, NotesActivity.class);
-                    startActivity(intentNotes);
+                Object object = dataItemsList.get(position);
+                String massage = object.toString();
 
-                } else if (position == 1) {
-                    Intent intentAddress = new Intent(MainActivity.this, AddressActivity.class);
-                    startActivity(intentAddress);
 
-                } else if (position == 2) {
-                    Intent intentCalendar = new Intent(MainActivity.this, CalendarActivity.class);
-                    startActivity(intentCalendar);
-
-                } else if (position == 3) {
-                    Toast.makeText(MainActivity.this, R.string.txtOpenSettings, Toast.LENGTH_LONG).show();
+                switch (massage) {
+                    case "Записная книжка":
+                        Intent intentNotes = new Intent(MainActivity.this, NotesActivity.class);
+                        startActivity(intentNotes);
+                        break;
+                    case "Календарь":
+                        Intent intentCalendar = new Intent(MainActivity.this, CalendarActivity.class);
+                        startActivity(intentCalendar);
+                        break;
+                    case "Адресс":
+                        Intent intentAddress = new Intent(MainActivity.this, AddressActivity.class);
+                        startActivity(intentAddress);
+                        break;
+                    case "Настройки":
+                        Toast.makeText(MainActivity.this, R.string.txtOpenSettings, Toast.LENGTH_LONG).show();
+                        break;
                 }
             }
         });
@@ -68,15 +74,13 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position == 0) {
-                    Toast.makeText(MainActivity.this, R.string.txtOpenNote, Toast.LENGTH_LONG).show();
-                } else if (position == 1) {
-                    Toast.makeText(MainActivity.this, R.string.txtOpenAddress, Toast.LENGTH_LONG).show();
-                } else if (position == 2) {
-                    Toast.makeText(MainActivity.this, R.string.txtOpenCalendar, Toast.LENGTH_LONG).show();
-                } else if (position == 3) {
-                    Toast.makeText(MainActivity.this, R.string.txtOpenSettings2, Toast.LENGTH_LONG).show();
-                }
+
+
+                Object object = dataItemsList.get(position);
+                String massage = object.toString();
+
+                Toast.makeText(MainActivity.this, massage, Toast.LENGTH_LONG).show();
+
                 return false;
             }
         });

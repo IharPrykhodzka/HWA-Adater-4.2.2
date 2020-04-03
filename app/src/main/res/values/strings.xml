@@ -12,7 +12,7 @@
     <string name="txtOpenCalendar">Меню календаря</string>
     <string name="txtOpenSettings">Упс! Голяк =)</string>
     <string name="txtOpenSettings2">Чё не понятного??? Сказанно! Голяк! =)</string>
-    <string name="txtAddress">Адрес</string>
+    <string name="txtAddress">Адресс</string>
     <string name="txtCalendar">Календарь</string>
 
     <string name="chooseStartDate">Дата-время старта задачи:</string>
